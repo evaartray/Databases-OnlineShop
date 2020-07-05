@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+
+<!-- Carousel -->
+<div id="themeSlider" class="carousel slide" data-ride="carousel"
+     data-interval="6500">
+    <ol class="carousel-indicators">
+        <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#themeSlider" data-slide-to="1"></li>
+        <li data-target="#themeSlider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="imgOverlay"></div>
+            <img class="w-100" src="https://hdwallsource.com/img/2016/6/colorful-flower-bouquet-wallpaper-hd-52257-53966-hd-wallpapers.jpg" alt="">
+            <div class="carousel-caption">
+                <h3>Only fresh flowers</h3>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img class="w-100" src="https://cdn.hipwallpaper.com/i/60/43/UgHbvW.jpg" alt="">
+            <div class="carousel-caption">
+                <h3>Wedding bouquets</h3>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img class="w-100" src="https://cdn.hipwallpaper.com/i/77/25/usQNGf.jpg" alt="">
+            <div class="carousel-caption">
+                <h3>Exclusive gifts</h3>
+
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#themeSlider" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#themeSlider" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+</div>
+
+<!-- Search bar -->
+<div class="olContent f1"><h2 style="color:black">Search Flowers/ bouquets</h2></div>
+<form method="post">
+    <div class="olSearch fr">
+        <input type="text" name="search" placeholder="Enter Keyword (ex: tulips)" class="inputComn form-control" />
+        <div class="searchIcon">
+            <button type="submit" class="searchBtn">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>This is in trend! <small>Check out the recent flower compositions</small></h2>
+        </div>
+    </div>
+</div>
+
+<div class="row product-container">
+    @* @foreach (var item in Model.ListOfProducts)*@
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item p-3">
+
+            <img class="img-responsive w-100" title="Click to View Product detail"
+                 src="https://cdn.shopify.com/s/files/1/0781/4423/products/bloomthis-bouquet-tessa-1080x1080-01_5e06cc29-4030-4175-8f93-96961aaf12aa_1024x1024.jpg?v=1571562312" />
+
+            <div class="caption">
+                <h5>Spring lilac and roses bouquet</h5>
+                <p>299 PLN</p>
+                @*<p>*@
+                @*@if (item.Quantity > 0)
+                    {
+                        using (Html.BeginForm("AddToCart", "Home", new { productId = item.ProductId, url = "Index" }, FormMethod.Post))
+                        {
+                            <button type="submit" class="pull-right"><i class="fa fa-shopping-cart"></i></button>
+                        }*@
+                <p>Available</p>
+                @*}
+                    else
+                    {
+                        <p>Not Available</p>
+                    }*@
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item p-3">
+
+            <img class="img-responsive w-100" title="Click to View Product detail"
+                 src="https://cdn11.bigcommerce.com/s-x27yce8a/images/stencil/1280x1280/products/108/503/English_Garden_Bouquet__65745.1454461598.jpg?c=2&imbypass=on" />
+
+            <div class="caption">
+                <h5>Summer Joy bouquet</h5>
+                <p>219 PLN</p>
+                @*<p>*@
+                @*@if (item.Quantity > 0)
+                    {
+                        using (Html.BeginForm("AddToCart", "Home", new { productId = item.ProductId, url = "Index" }, FormMethod.Post))
+                        {
+                            <button type="submit" class="pull-right"><i class="fa fa-shopping-cart"></i></button>
+                        }*@
+                <p>Will be in stock soon</p>
+                @*}
+                    else
+                    {
+                        <p>Not Available</p>
+                    }*@
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item p-3">
+
+            <img class="img-responsive w-100 p-3" title="Click to View Product detail"
+                 src="https://thelittleflowershop.co.nz/wp-content/uploads/2018/09/auckland-florist-bouquet-coolasacucumber.jpg" />
+
+            <div class="caption">
+                <h5>Purple dream bouquet</h5>
+                <p>301 PLN</p>
+                @*<p>*@
+                @*@if (item.Quantity > 0)
+                    {
+                        using (Html.BeginForm("AddToCart", "Home", new { productId = item.ProductId, url = "Index" }, FormMethod.Post))
+                        {
+                            <button type="submit" class="pull-right"><i class="fa fa-shopping-cart"></i></button>
+                        }*@
+                <p>Available</p>
+                @*}
+                    else
+                    {
+                        <p>Not Available</p>
+                    }*@
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    @* @Html.PagedListPager(Model.ListOfProducts, page => Url.Action("Index", new { page, search = Request.QueryString["search"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })*@
+</div>
