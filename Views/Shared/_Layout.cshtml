@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -44,7 +45,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Cart(3) <b class="caret"></b></a>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Cart(1) <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             @*@if (Session["cart"] != null)
                                 {
@@ -69,9 +70,10 @@
                 <div class="nav-menu">
 
                     <ul class="nav nav-pills">
-                        <li class="active"><a style="border-radius:initial;" href="#">Home</a></li>
-                        <li><a style="border-radius:initial;" href="#">Products</a></li>
-                        <li><a style="border-radius:initial;" href="#">About us</a></li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Bouquets", "Index", "Bouquet")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
                 </div>
             </div>
